@@ -1,6 +1,7 @@
-# jfjf
-    ##### kfjkwjf[wfjkwfj](kjfkj) [Email Me](kfjsfjs) [Deployed Application](https://www.youtube.com/channel/UCzyohHEJNSqklS1bwxmuVaA)
-    #### ReadMeGenerator© 2020 All Rights Reserved.  None All material must be cited or credited, when using material (free to use).
+function fileGenerator(response) {
+  var content = `# ${response.title}
+    ##### ${response.logo}[${response.userName}](${response.GitHub}) [Email Me](${response.email}) [Deployed Application](https://www.youtube.com/channel/UCzyohHEJNSqklS1bwxmuVaA)
+    #### ReadMeGenerator© 2020 All Rights Reserved.  ${response.license} All material must be cited or credited, when using material (free to use).
     
     ## Table of Contents
     * [Repository Description](#Repository-Description)
@@ -12,7 +13,7 @@
     
     # Repository Description
     ###### [Back to Table of Contents](#Table-of-Contents)
-    lsfjl
+    ${response.description}
     
     Remember this also, as a developer, your goal should be designing NEW experiences that makes people's lives simple; because as developers, we solve problems that people didn't even knew they had- even better, in a way that they do not understand: We are the super heroes and heriones of tomorrow; so get coding, and I hope this repository helps you along your development. - [Frederick Thomas](https://www.linkedin.com/in/discoverfrederickthomas/), Super Coding Ninja™
     
@@ -31,42 +32,42 @@
     
     ### Contribution Guidelines
     ###### [Back to Table of Contents](#Table-of-Contents)
-    lskfjlk
+    ${response.contribute}
     
     
     ## Test Instructions
     ###### [Back to Table of Contents](#Table-of-Contents)
-    1.  lsjfls
-    2.  lkjflj
-    3.  lfjl
+    1.  ${response.test}
+    2.  ${response.test2}
+    3.  ${response.test3}
     
     
     ## Overview: What We Accomplished!
     ### Workflow [Back to Table of Contents](#Table-of-Contents)
-    ksljfls
+    ${response.accomplish}
     
     
     ### Screenshots (Building this application)
     ###### [Back to Table of Contents](#Table-of-Contents)
-    #### Demo I createad ![script.js](dlfjl)
+    #### Demo I createad ![script.js](${response.scriptjs})
     
-    #### Demo I createad ![fileGenerator.js](lsjfisj)
+    #### Demo I createad ![fileGenerator.js](${response.fileGnerator})
     
-    #### Demo I createad ![ReadMe.md](lsjfl)
+    #### Demo I createad ![ReadMe.md](${response.ReadMe})
     
     
     ## References
     ###### [Back to Table of Contents](#Table-of-Contents)
-    1.  sldjlfs
+    1.  ${response.ref1}
     
-    2.  sljflsj
+    2.  ${response.ref2}
     
     ## Repositiory End-Goal Criterea
     ###### [Back to Table of Contents](#Table-of-Contents)
-    sjdlsjf
+    ${response.endgoal}
     
     ## License
-    None
+    ${response.license}
     
     Please feel free to fork and even collaborate with me on this awesome [repository](https://github.com/supercodingninja/CodeQuiz ).  Thank you for viewing! - Frederick Thomas, Super Coding Ninja™ [2014-Present](https://supercodingninja.github.io/) All Rights Reserved
     
@@ -74,4 +75,8 @@
     
     The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`;
+  return content;
+}
+
+module.exports = fileGenerator;
