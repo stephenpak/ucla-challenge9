@@ -1,9 +1,6 @@
-// TODO: Include packages needed for this application
-const fs = require('fs');
-const inquirer = require('inquirer');
-var fileGenerator = require('./fileGenerator');
+var fs = require('fs');
+var inquirer = require('inquirer');
 
-// TODO: Create an array of questions for user input
 const questions = [
   {
     type: 'input',
@@ -18,7 +15,7 @@ const questions = [
   {
     type: 'input',
     message: 'Please enter your Github profile link?',
-    name: 'Github',
+    name: 'gitHub',
   },
   {
     type: 'input',
@@ -43,11 +40,41 @@ const questions = [
   },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+inquirer.prompt(questions).then(function (response) {
+  console.log(response);
 
-// TODO: Create a function to initialize app
-function init() {}
+  var content = file(response);
+  console.log(content);
+  fs.writeFile('./ReadMe.md', content, function (err) {
+    if (err) throw err;
+    console.log('success');
+  });
+});
 
-// Function call to initialize app
-init();
+function file(response) {
+  var content = `# ${response.title}
+      ##### ${response.userName}](${response.gitHub}) [Email Me]${response.email}
+      #### ReadMeGenerator 2022 ${response.license} (free to use).
+      -----------------------------------------------------------------------------------------
+      ## Table of Contents
+
+      * [Repository Description]
+      ${response.description}
+
+      *[Participation]
+      ${response.contribute}
+      
+      ## User Story
+      
+      ## User Story
+      AS A developer
+      I WANT a README generator
+      SO THAT I can quickly create a professional README for a new project.
+      
+      ## License
+      ${response.license}
+
+      UCLA EXTENSION CODING BOOTCAMP Stephen Pak Challenge #9 2022`;
+
+  return content;
+}
